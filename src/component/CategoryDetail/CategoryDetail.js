@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CategoryContext } from '../../App';
 
-const CategoryDetail = (props) => {
-    const {increase} = props;
+const CategoryDetail = () => {
+    const category = useContext(CategoryContext);
+
     return (
         <div>
-            <h4>Select your category has: {increase}</h4>
+            <h4>Select category has:{category} </h4>
         </div>
     );
 };

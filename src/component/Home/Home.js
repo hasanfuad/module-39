@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CategoryContext } from '../../App';
 import Categories from '../Categories/Categories';
 
-const Home = (props) => {
-    const {increase} = props;
+const Home = () => {
+    const category = useContext(CategoryContext);
     return (
         <div style={{border: '1px solid purple'}}>
-            <h1>Header number: {increase}</h1>
-            <Categories increase={increase}/>
+            <h1>Header number: {category}</h1>
+            <Categories/>
         </div>
     );
 };
