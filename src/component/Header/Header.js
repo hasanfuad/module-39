@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CategoryContext } from '../../App';
 
-const Header = (props) => {
-    const {increase, setIncrease} = props;
+const Header = () => {
+    const [category, setCategory] = useContext(CategoryContext);
     return (
         <div>
-            <h1>Number:{increase}</h1>
-            <button onClick={()=>setIncrease(increase+1)}>Increase</button>
+            <h1>Number:{category}</h1>
+            <button onClick={()=>setCategory(category+1)}>Increase</button>
         </div>
     );
 };
